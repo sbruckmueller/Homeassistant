@@ -1,0 +1,330 @@
+blueprint:
+  name: ROBB ROB_200-007-0-V2 Z2M V2
+  description: "This blueprint is for the 8-Button-Switch ROBB ROB_200-007-0 dimmer switch when used with zigbee2mqtt V2.
+  It is for general use so all buttons can be connected to any action of your choice.
+  Make sure to select the correct device for the remote."
+  domain: automation
+  input:
+    remote:
+      name: Remote
+      description: Dimmer remote to use
+      selector:
+        device:
+          multiple: false
+    on_button_1_short:
+      name: On button 1 - short
+      default: []
+      selector:
+        action: {}
+    off_button_1_short:
+      name: Off button 1 - short
+      default: []
+      selector:
+        action: {}
+    on_button_1_hold:
+      name: On button 1 - hold
+      default: []
+      selector:
+        action: {}
+    off_button_1_hold:
+      name: Off button 1 - hold
+      default: []
+      selector:
+        action: {}
+    button_1_release:
+      name: Button 1 - release
+      default: []
+      selector:
+        action: {}
+    on_button_2_short:
+      name: On button 2 - short
+      default: []
+      selector:
+        action: {}
+    off_button_2_short:
+      name: Off button 2 - short
+      default: []
+      selector:
+        action: {}
+    on_button_2_hold:
+      name: On button 2 - hold
+      default: []
+      selector:
+        action: {}
+    off_button_2_hold:
+      name: Off button 2 - hold
+      default: []
+      selector:
+        action: {}
+    button_2_release:
+      name: Button 2 - release
+      default: []
+      selector:
+        action: {}
+ 
+    on_button_3_short:
+      name: On button 3 - short
+      default: []
+      selector:
+        action: {}
+    off_button_3_short:
+      name: Off button 3 - short
+      default: []
+      selector:
+        action: {}
+    on_button_3_hold:
+      name: On button 3 - hold
+      default: []
+      selector:
+        action: {}
+    off_button_3_hold:
+      name: Off button 3 - hold
+      default: []
+      selector:
+        action: {}
+    button_3_release:
+      name: Button 3 - release
+      default: []
+      selector:
+        action: {}
+    on_button_4_short:
+      name: On button 4 - short
+      default: []
+      selector:
+        action: {}
+    off_button_4_short:
+      name: Off button 4 - short
+      default: []
+      selector:
+        action: {}
+    on_button_4_hold:
+      name: On button 4 - hold
+      default: []
+      selector:
+        action: {}
+    off_button_4_hold:
+      name: Off button 4 - hold
+      default: []
+      selector:
+        action: {}
+    button_4_release:
+      name: Button 4 - release
+      default: []
+      selector:
+        action: {}
+ 
+     
+triggers:
+  - trigger: device
+    domain: mqtt
+    id: on_1
+    device_id: !input "remote"
+    type: action
+    subtype: on_1
+  - trigger: device
+    domain: mqtt
+    id: off_1
+    device_id: !input "remote"
+    type: action
+    subtype: off_1
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_up_1
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_up_1
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_down_1
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_down_1
+  - trigger: device
+    domain: mqtt
+    id: brightness_stop_1
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_stop_1
+
+  - trigger: device
+    domain: mqtt
+    id: on_2
+    device_id: !input "remote"
+    type: action
+    subtype: on_2
+  - trigger: device
+    domain: mqtt
+    id: off_2
+    device_id: !input "remote"
+    type: action
+    subtype: off_2
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_up_2
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_up_2
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_down_2
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_down_2
+  - trigger: device
+    domain: mqtt
+    id: brightness_stop_2
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_stop_2
+
+
+  - trigger: device
+    domain: mqtt
+    id: on_3
+    device_id: !input "remote"
+    type: action
+    subtype: on_3
+  - trigger: device
+    domain: mqtt
+    id: off_3
+    device_id: !input "remote"
+    type: action
+    subtype: off_3
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_up_3
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_up_3
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_down_3
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_down_3
+  - trigger: device
+    domain: mqtt
+    id: brightness_stop_3
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_stop_3
+
+  - trigger: device
+    domain: mqtt
+    id: on_4
+    device_id: !input "remote"
+    type: action
+    subtype: on_4
+  - trigger: device
+    domain: mqtt
+    id: off_4
+    device_id: !input "remote"
+    type: action
+    subtype: off_4
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_up_4
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_up_4
+  - trigger: device
+    domain: mqtt
+    id: brightness_move_down_4
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_move_down_4
+  - trigger: device
+    domain: mqtt
+    id: brightness_stop_4
+    device_id: !input "remote"
+    type: action
+    subtype: brightness_stop_4
+
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: on_1
+        sequence: !input "on_button_1_short"
+      - conditions:
+          - condition: trigger
+            id: off_1
+        sequence: !input "off_button_1_short"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_up_1
+        sequence: !input "on_button_1_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_down_1
+        sequence: !input "off_button_1_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_stop_1
+        sequence: !input "button_1_release"
+
+      - conditions:
+          - condition: trigger
+            id: on_2
+        sequence: !input "on_button_2_short"
+      - conditions:
+          - condition: trigger
+            id: off_2
+        sequence: !input "off_button_2_short"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_up_2
+        sequence: !input "on_button_2_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_down_2
+        sequence: !input "off_button_2_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_stop_2
+        sequence: !input "button_2_release"
+
+      - conditions:
+          - condition: trigger
+            id: on_3
+        sequence: !input "on_button_3_short"
+      - conditions:
+          - condition: trigger
+            id: off_3
+        sequence: !input "off_button_3_short"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_up_3
+        sequence: !input "on_button_3_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_down_3
+        sequence: !input "off_button_1_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_stop_3
+        sequence: !input "button_3_release"
+
+      - conditions:
+          - condition: trigger
+            id: on_4
+        sequence: !input "on_button_4_short"
+      - conditions:
+          - condition: trigger
+            id: off_4
+        sequence: !input "off_button_4_short"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_up_4
+        sequence: !input "on_button_4_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_move_down_4
+        sequence: !input "off_button_4_hold"
+      - conditions:
+          - condition: trigger
+            id: brightness_stop_4
+        sequence: !input "button_4_release"
+
+
+mode: single
